@@ -186,8 +186,9 @@ console.log(friends.includes("Bob"));
 */
 
 //! Objects
-
-const jonas = {
+//! Dot vs. Bracket Notation
+/*
+const naufil = {
   firstName: "Naufil",
   lastName: "Shemle",
   age: 2037 - 2003,
@@ -195,3 +196,75 @@ const jonas = {
   friends: ["Sam", "Jack", "Max"],
 };
 
+console.log(naufil);
+
+console.log(naufil.lastName);
+console.log(naufil["lastName"]);
+
+const nameKey = "Name";
+console.log(naufil["first" + nameKey]);
+console.log(naufil["last" + nameKey]);
+
+// console.log(naufil."last" + nameKey); // Error
+
+const interestedIn = prompt(
+  "What do you want to about Naufil? Choose between firstName, lastName, age, job, and friends"
+);
+
+if (naufil[interestedIn]) {
+  console.log(naufil[interestedIn]);
+} else {
+  console.log(
+    "Wrong reqeust! Choose between firstName, lastName, age, job, and friends"
+  );
+}
+
+naufil.location = "Kalyan";
+naufil["instagram"] = "@naufil_shemle";
+
+console.log(naufil);
+
+//Challenge
+//"Naufil has 3 friends, and his best friend is called Sam"
+console.log(
+  `${naufil.firstName} has ${naufil.friends.length} friends, and his best friend is called ${naufil.friends[0]}`
+);
+*/
+
+//! Object Methods
+/*
+const naufil = {
+  firstName: "Naufil",
+  lastName: "Shemle",
+  birthYear: 2003,
+  job: "SDE",
+  friends: ["Sam", "Jack", "Max"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+
+  // calAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-years old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+  },
+};
+
+console.log(naufil.calcAge());
+
+console.log(naufil.age);
+console.log(naufil.age);
+console.log(naufil.age);
+
+console.log(naufil.getSummary());
+*/
