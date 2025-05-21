@@ -268,3 +268,99 @@ console.log(naufil.age);
 
 console.log(naufil.getSummary());
 */
+
+//! Iteration: The for Loop
+// for loop keeps running while condition is TRUE
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+
+
+//! Looping Arrays, Breaking and Continuing
+
+const naufil = [
+  "Naufil",
+  "Shemle",
+  2037 - 2003,
+  "SDE",
+  ["Sam", "Jack", "Max"],
+  true,
+];
+const types = [];
+// console.log(naufil[0]);
+// console.log(naufil[1]);
+// ...
+// console.log(naufil[4]);
+// naufil[5] does not exist
+
+for (let i = 0; i < naufil.length; i++) {
+  // Reading from naufil array
+  console.log(naufil[i], typeof naufil[i]);
+
+  // Filling types array
+  // types[i] = typeof naufil[i];
+
+  types.push(typeof naufil[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log("---ONLY STRINGS---");
+
+for (let i = 0; i < naufil.length; i++) {
+  if (typeof naufil[i] !== "string") continue;
+
+  console.log(naufil[i], typeof naufil[i]);
+}
+
+console.log("---BREAK WITH NUMBER---");
+
+for (let i = 0; i < naufil.length; i++) {
+  if (typeof naufil[i] === "number") break;
+
+  console.log(naufil[i], typeof naufil[i]);
+}
+
+
+//! Looping Backwards and Loops in Loops
+
+// const naufil = ["Naufil", "Shemle", 2037 - 2003, "SDE", ["Sam", "Jack", "Max"]];
+
+for (let i = naufil.length - 1; i >= 0; i--) {
+  console.log(i, naufil[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`------Starting Exercise ${exercise}------`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
+  }
+}
+
+
+//! while Loop:
+
+let rep = 1;
+while (rep <= 10) {
+  // console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
+}
